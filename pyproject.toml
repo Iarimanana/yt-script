@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yt-script"
+version = "0.1.0"
+description = "Get the script (transcript) of a YouTube channel's latest videos or of a video by title."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "yt-dlp>=2025.1.1",
+    "youtube-transcript-api>=1.2,<2",
+    "requests>=2",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+yt-script = "yt_script.cli:run"
+
+[tool.setuptools]
+packages = ["yt_script"]
